@@ -14,9 +14,6 @@ BuildRequires:	automake
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
-
 %description
 liba52 is a free library for decoding ATSC A/52 streams. It is
 released under the terms of the GPL license. The A/52 standard is used
