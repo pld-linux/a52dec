@@ -5,8 +5,6 @@ Version:	0.7.2
 Release:	2
 License:	GPL
 Group:		X11/Applications/Multimedia
-Group(de):	X11/Applikationen/Multimedia
-Group(pl):	X11/Aplikacje/Multimedia
 Source0:	http://liba52.sourceforge.net/files/%{name}-%{version}.tar.gz
 URL:		http://www.dtek.chalmers.se/~dvd/
 BuildRequires:	autoconf
@@ -35,13 +33,6 @@ AC-3.
 Summary:	Biblioteki a52dec
 Summary(pl):	Pakiet z bibliotekami a52dec
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 
 %description libs
 %{name}-devel includes development files for %{name}.
@@ -53,13 +44,6 @@ Pliki dla programistСw a52dec.
 Summary:	%{name} development package
 Summary(pl):	Pakiet %{name} dla programistСw
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-libs = %{version}-%{release}
 
 %description libs-devel
@@ -72,13 +56,6 @@ Pliki dla programistСw a52dec.
 Summary:	Biblioteki a52dec
 Summary(pl):	Pakiet z bibliotekami a52dec
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 
 %description libs-static
 %{name}-devel includes development files for %{name}.
