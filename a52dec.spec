@@ -4,18 +4,15 @@ Name:		a52dec
 Version:	0.7.2
 Release:	2
 License:	GPL
-Group:		X11/Applications/Multimedia
-Group(de):	X11/Applikationen/Multimedia
-Group(pl):	X11/Aplikacje/Multimedia
+Group:		Applications/Multimedia
+Group(de):	Applikationen/Multimedia
+Group(pl):	Aplikacje/Multimedia
 Source0:	http://liba52.sourceforge.net/files/%{name}-%{version}.tar.gz
 URL:		http://www.dtek.chalmers.se/~dvd/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 liba52 is a free library for decoding ATSC A/52 streams. It is
