@@ -6,7 +6,7 @@ Release:	2
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://liba52.sourceforge.net/files/%{name}-%{version}.tar.gz
-URL:		http://www.dtek.chalmers.se/~dvd/
+URL:		http://liba52.sourceforge.net
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
