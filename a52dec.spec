@@ -1,19 +1,18 @@
-Summary:	A library for handling encrypted dvds
+Summary:	A library for handling encrypted DVDs
 Summary(pl):	Biblioteka do obs³ugi zakodowanych DVD
 Name:		a52dec
 Version:	0.7.4
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://liba52.sourceforge.net/files/%{name}-%{version}.tar.gz
+Patch0:		%{name}-opt.patch
 URL:		http://liba52.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
+Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_libdir		/usr/lib
-%define		_includedir	/usr/include
 
 %description
 liba52 is a free library for decoding ATSC A/52 streams. It is
@@ -21,48 +20,60 @@ released under the terms of the GPL license. The A/52 standard is used
 in a variety of applications, including digital television and DVD. It
 is also known as AC-3.
 
+This package contains a52dec utilities.
+
 %description -l pl
 liba52 jest wolnodostêpn± (na licencji GPL) bibliotek± do dekodowania
 strumieni ATSC A/52. Standard A/52 jest u¿ywany w wielu
 zastosowaniach, w tym cyfrowej telewizji i DVD. Jest znany tak¿e jako
 AC-3.
 
+Ten pakiet zawiera narzêdzia a52dec.
+
 %package libs
-Summary:	Biblioteki a52dec
-Summary(pl):	Pakiet z bibliotekami a52dec
+Summary:	a52dec library for handling encrypted DVDs
+Summary(pl):	Biblioteka a52dec - do obs³ugi zakodowanych DVD
 Group:		Development/Libraries
 
 %description libs
-%{name}-devel includes development files for %{name}.
+liba52 is a free library for decoding ATSC A/52 streams. It is
+released under the terms of the GPL license. The A/52 standard is used
+in a variety of applications, including digital television and DVD. It
+is also known as AC-3.
 
 %description libs -l pl
-Pliki dla programistów a52dec.
+liba52 jest wolnodostêpn± (na licencji GPL) bibliotek± do dekodowania
+strumieni ATSC A/52. Standard A/52 jest u¿ywany w wielu
+zastosowaniach, w tym cyfrowej telewizji i DVD. Jest znany tak¿e jako
+AC-3.
 
 %package libs-devel
-Summary:	%{name} development package
-Summary(pl):	Pakiet %{name} dla programistów
+Summary:	Header files for a52dec library
+Summary(pl):	Pliki nag³ówkowe biblioteki a52dec
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
 %description libs-devel
-%{name}-devel includes development files for %{name}.
+Header files for development using a52dec library.
 
 %description libs-devel -l pl
-Pliki dla programistów a52dec.
+Pliki nag³ówkowe do programowania z u¿yciem biblioteki a52dec.
 
 %package libs-static
-Summary:	Biblioteki a52dec
-Summary(pl):	Pakiet z bibliotekami a52dec
+Summary:	Static a52dec library
+Summary(pl):	Statyczna biblioteka a52dec
 Group:		Development/Libraries
+Requires:	%{name}-libs-devel = %{version}-%{release}
 
 %description libs-static
-%{name}-devel includes development files for %{name}.
+Static a52dec library.
 
 %description libs-static -l pl
-Pliki dla programistów a52dec.
+Statyczna biblioteka a52dec.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
 rm -f missing
@@ -76,6 +87,7 @@ rm -f missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 %clean
@@ -92,12 +104,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files libs
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/*.so.*
+%attr(755,root,root) %{_libdir}/*.so.*.*
 
 %files libs-devel
 %defattr(644,root,root,755)
-%{_libdir}/*.la
 %attr(755,root,root) %{_libdir}/*.so
+%{_libdir}/*.la
 %{_includedir}/*
 
 %files libs-static
