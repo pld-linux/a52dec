@@ -70,8 +70,8 @@ Pliki dla programistów a52dec.
 rm -f missing
 libtoolize --copy --force
 aclocal
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure \
 	--enable-shared
 %{__make}
