@@ -98,10 +98,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files libs-devel
 %defattr(644,root,root,755)
+%{_libdir}/*.la
 %attr(755,root,root) %{_libdir}/*.so
 %{_includedir}/*
 
 %files libs-static
 %defattr(644,root,root,755)
 %{_libdir}/*.a
-%{_libdir}/*.la
