@@ -6,7 +6,7 @@ Release:	3
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://liba52.sourceforge.net/files/%{name}-%{version}.tar.gz
-# Source0-md5: caa9f5bc44232dc8aeea773fea56be80
+# Source0-md5:	caa9f5bc44232dc8aeea773fea56be80
 Patch0:		%{name}-opt.patch
 Patch1:		%{name}-pic.patch
 URL:		http://liba52.sourceforge.net/
