@@ -1,8 +1,8 @@
 Summary:	A library for handling encrypted dvds
 Summary(pl):	Biblioteka do obsЁugi zakodowanych DVD
 Name:		a52dec
-Version:	0.7.1b
-Release:	3
+Version:	0.7.2
+Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Group(de):	X11/Applikationen/Multimedia
@@ -29,7 +29,25 @@ strumieni ATSC A/52. Standard A/52 jest u©ywany w wielu
 zastosowaniach, w tym cyfrowej telewizji i DVD. Jest znany tak©e jako
 AC-3.
 
-%package devel
+%package libs
+Summary:	Biblioteki a52dec
+Summary(pl):	Pakiet z bibliotekami a52dec
+Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
+
+%description libs
+%{name}-devel includes development files for %{name}.
+
+%description libs -l pl
+Pliki dla programistСw a52dec.
+
+%package libs-devel
 Summary:	%{name} development package
 Summary(pl):	Pakiet %{name} dla programistСw
 Group:		Development/Libraries
@@ -40,12 +58,30 @@ Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
 Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}-libs = %{version}-%{release}
 
-%description devel
-%{name}-devel includes development files for %{name}
+%description libs-devel
+%{name}-devel includes development files for %{name}.
 
-%description devel -l pl
+%description libs-devel -l pl
+Pliki dla programistСw a52dec.
+
+%package libs-static
+Summary:	Biblioteki a52dec
+Summary(pl):	Pakiet z bibliotekami a52dec
+Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
+
+%description libs-static
+%{name}-devel includes development files for %{name}.
+
+%description libs-static -l pl
 Pliki dla programistСw a52dec.
 
 %prep
@@ -56,7 +92,7 @@ libtoolize --copy --force
 aclocal
 autoconf
 automake -a -c
-%configure
+%configure --enable-shared
 %{__make}
 
 %install
@@ -77,8 +113,16 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/*
 
-%files devel
+%files libs
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/*.so.*
+
+%files libs-devel
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/*.so
 %{_includedir}/*
+
+%files libs-static
+%defattr(644,root,root,755)
 %{_libdir}/*.a
 %attr(755,root,root) %{_libdir}/*.la
