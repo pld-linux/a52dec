@@ -2,7 +2,7 @@ Summary:	A library for handling encrypted dvds
 Summary(pl):	Biblioteka do obs³ugi zakodowanych DVD
 Name:		a52dec
 Version:	0.7.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://liba52.sourceforge.net/files/%{name}-%{version}.tar.gz
@@ -85,14 +85,14 @@ gzip -9nf AUTHORS NEWS README TODO
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
 %doc {AUTHORS,NEWS,README,TODO}.gz
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/*
+%{_mandir}/man?/*
 
 %files libs
 %defattr(644,root,root,755)
