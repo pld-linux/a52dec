@@ -6,7 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://liba52.sourceforge.net/files/%{name}-%{version}.tar.gz
-URL:		http://liba52.sourceforge.net
+URL:		http://liba52.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
