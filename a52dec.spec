@@ -12,8 +12,6 @@ BuildRequires:	automake
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 %define		_libdir		/usr/lib
 %define		_includedir	/usr/include
 
