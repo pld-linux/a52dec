@@ -1,4 +1,5 @@
-Summary:	A library for handling encrypted dvds.
+Summary:	A library for handling encrypted dvds
+Summary(pl):	Biblioteka do obs³ugi zakodowanych DVD
 Name:		a52dec
 Version:	0.7.1b
 Release:	3
@@ -8,6 +9,9 @@ Group(de):	X11/Applikationen/Multimedia
 Group(pl):	X11/Aplikacje/Multimedia
 Source0:	http://liba52.sourceforge.net/files/%{name}-%{version}.tar.gz
 URL:		http://www.dtek.chalmers.se/~dvd/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -19,8 +23,15 @@ released under the terms of the GPL license. The A/52 standard is used
 in a variety of applications, including digital television and DVD. It
 is also known as AC-3.
 
+%description -l pl
+liba52 jest wolnodostêpn± (na licencji GPL) bibliotek± do dekodowania
+strumieni ATSC A/52. Standard A/52 jest u¿ywany w wielu
+zastosowaniach, w tym cyfrowej telewizji i DVD. Jest znany tak¿e jako
+AC-3.
+
 %package devel
 Summary:	%{name} development package
+Summary(pl):	Pakiet %{name} dla programistów
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
 Group(es):	Desarrollo/Bibliotecas
@@ -33,6 +44,9 @@ Requires:	%{name} = %{version}-%{release}
 
 %description devel
 %{name}-devel includes development files for %{name}
+
+%description devel -l pl
+Pliki dla programistów a52dec.
 
 %prep
 %setup -q
