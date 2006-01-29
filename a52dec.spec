@@ -1,12 +1,13 @@
+%define		_snap	20040611
 Summary:	A library for handling encrypted DVDs
 Summary(pl):	Biblioteka do obs³ugi zakodowanych DVD
 Name:		a52dec
-Version:	0.7.4
-Release:	3
+Version:	0.7.5
+Release:	0.%{_snap}.1
 License:	GPL
 Group:		X11/Applications/Multimedia
-Source0:	http://liba52.sourceforge.net/files/%{name}-%{version}.tar.gz
-# Source0-md5:	caa9f5bc44232dc8aeea773fea56be80
+Source0:	http://liba52.sourceforge.net/files/%{name}-snapshot.tar.gz
+# Source0-md5:	1729c7507f76b0d4cc04540926c5d0d7
 Patch0:		%{name}-opt.patch
 Patch1:		%{name}-pic.patch
 URL:		http://liba52.sourceforge.net/
@@ -74,12 +75,11 @@ Static a52dec library.
 Statyczna biblioteka a52dec.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}-cvs
 %patch -p1
 %patch1 -p1
 
 %build
-rm -f missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
@@ -115,6 +115,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/*.so
 %{_libdir}/*.la
 %{_includedir}/*
+%{_pkgconfigdir}/*.pc
 
 %files libs-static
 %defattr(644,root,root,755)
