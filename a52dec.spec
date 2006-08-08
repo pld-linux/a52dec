@@ -76,7 +76,7 @@ Statyczna biblioteka a52dec.
 
 %prep
 %setup -q -n %{name}-%{version}-cvs
-%patch -p1
+%patch0 -p1
 %patch1 -p1
 
 %build
