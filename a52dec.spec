@@ -1,6 +1,6 @@
 %define		_snap	20040611
 Summary:	A library for handling encrypted DVDs
-Summary(pl):	Biblioteka do obs³ugi zakodowanych DVD
+Summary(pl.UTF-8):   Biblioteka do obsÅ‚ugi zakodowanych DVD
 Name:		a52dec
 Version:	0.7.5
 Release:	0.%{_snap}.2
@@ -25,17 +25,17 @@ is also known as AC-3.
 
 This package contains a52dec utilities.
 
-%description -l pl
-liba52 jest wolnodostêpn± (na licencji GPL) bibliotek± do dekodowania
-strumieni ATSC A/52. Standard A/52 jest u¿ywany w wielu
-zastosowaniach, w tym cyfrowej telewizji i DVD. Jest znany tak¿e jako
+%description -l pl.UTF-8
+liba52 jest wolnodostÄ™pnÄ… (na licencji GPL) bibliotekÄ… do dekodowania
+strumieni ATSC A/52. Standard A/52 jest uÅ¼ywany w wielu
+zastosowaniach, w tym cyfrowej telewizji i DVD. Jest znany takÅ¼e jako
 AC-3.
 
-Ten pakiet zawiera narzêdzia a52dec.
+Ten pakiet zawiera narzÄ™dzia a52dec.
 
 %package libs
 Summary:	a52dec library for handling encrypted DVDs
-Summary(pl):	Biblioteka a52dec - do obs³ugi zakodowanych DVD
+Summary(pl.UTF-8):   Biblioteka a52dec - do obsÅ‚ugi zakodowanych DVD
 Group:		Development/Libraries
 
 %description libs
@@ -44,34 +44,34 @@ released under the terms of the GPL license. The A/52 standard is used
 in a variety of applications, including digital television and DVD. It
 is also known as AC-3.
 
-%description libs -l pl
-liba52 jest wolnodostêpn± (na licencji GPL) bibliotek± do dekodowania
-strumieni ATSC A/52. Standard A/52 jest u¿ywany w wielu
-zastosowaniach, w tym cyfrowej telewizji i DVD. Jest znany tak¿e jako
+%description libs -l pl.UTF-8
+liba52 jest wolnodostÄ™pnÄ… (na licencji GPL) bibliotekÄ… do dekodowania
+strumieni ATSC A/52. Standard A/52 jest uÅ¼ywany w wielu
+zastosowaniach, w tym cyfrowej telewizji i DVD. Jest znany takÅ¼e jako
 AC-3.
 
 %package libs-devel
 Summary:	Header files for a52dec library
-Summary(pl):	Pliki nag³ówkowe biblioteki a52dec
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki a52dec
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
 %description libs-devel
 Header files for development using a52dec library.
 
-%description libs-devel -l pl
-Pliki nag³ówkowe do programowania z u¿yciem biblioteki a52dec.
+%description libs-devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe do programowania z uÅ¼yciem biblioteki a52dec.
 
 %package libs-static
 Summary:	Static a52dec library
-Summary(pl):	Statyczna biblioteka a52dec
+Summary(pl.UTF-8):   Statyczna biblioteka a52dec
 Group:		Development/Libraries
 Requires:	%{name}-libs-devel = %{version}-%{release}
 
 %description libs-static
 Static a52dec library.
 
-%description libs-static -l pl
+%description libs-static -l pl.UTF-8
 Statyczna biblioteka a52dec.
 
 %prep
