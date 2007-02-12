@@ -1,6 +1,6 @@
 %define		_snap	20040611
 Summary:	A library for handling encrypted DVDs
-Summary(pl.UTF-8):   Biblioteka do obsługi zakodowanych DVD
+Summary(pl.UTF-8):	Biblioteka do obsługi zakodowanych DVD
 Name:		a52dec
 Version:	0.7.5
 Release:	0.%{_snap}.2
@@ -35,7 +35,7 @@ Ten pakiet zawiera narzędzia a52dec.
 
 %package libs
 Summary:	a52dec library for handling encrypted DVDs
-Summary(pl.UTF-8):   Biblioteka a52dec - do obsługi zakodowanych DVD
+Summary(pl.UTF-8):	Biblioteka a52dec - do obsługi zakodowanych DVD
 Group:		Development/Libraries
 
 %description libs
@@ -52,7 +52,7 @@ AC-3.
 
 %package libs-devel
 Summary:	Header files for a52dec library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki a52dec
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki a52dec
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
@@ -64,7 +64,7 @@ Pliki nagłówkowe do programowania z użyciem biblioteki a52dec.
 
 %package libs-static
 Summary:	Static a52dec library
-Summary(pl.UTF-8):   Statyczna biblioteka a52dec
+Summary(pl.UTF-8):	Statyczna biblioteka a52dec
 Group:		Development/Libraries
 Requires:	%{name}-libs-devel = %{version}-%{release}
 
