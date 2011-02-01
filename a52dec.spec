@@ -1,9 +1,10 @@
-%define		_snap	20040611
+%define		subver	20040611
+%define		rel		3
 Summary:	A library for handling encrypted DVDs
 Summary(pl.UTF-8):	Biblioteka do obsługi zakodowanych DVD
 Name:		a52dec
 Version:	0.7.5
-Release:	0.%{_snap}.2
+Release:	0.%{subver}.%{rel}
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://liba52.sourceforge.net/files/%{name}-snapshot.tar.gz
@@ -97,26 +98,29 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post libs	-p /sbin/ldconfig
-%postun libs	-p /sbin/ldconfig
+%post	libs -p /sbin/ldconfig
+%postun libs -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README TODO
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man?/*
+%attr(755,root,root) %{_bindir}/a52dec
+%attr(755,root,root) %{_bindir}/extract_a52
+%{_mandir}/man1/a52dec.1*
+%{_mandir}/man1/extract_a52.1*
 
 %files libs
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/*.so.*.*
+%attr(755,root,root) %{_libdir}/liba52.so.*.*.*
+%ghost %{_libdir}/liba52.so.0
 
 %files libs-devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/*.so
-%{_libdir}/*.la
-%{_includedir}/*
-%{_pkgconfigdir}/*.pc
+%{_libdir}/liba52.so
+%{_libdir}/liba52.la
+%{_includedir}/a52dec
+%{_pkgconfigdir}/liba52.pc
 
 %files libs-static
 %defattr(644,root,root,755)
-%{_libdir}/*.a
+%{_libdir}/liba52.a
