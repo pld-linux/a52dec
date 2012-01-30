@@ -1,5 +1,5 @@
 %define		subver	20040611
-%define		rel		3
+%define		rel		4
 Summary:	A library for handling encrypted DVDs
 Summary(pl.UTF-8):	Biblioteka do obsługi zakodowanych DVD
 Name:		a52dec
@@ -37,7 +37,7 @@ Ten pakiet zawiera narzędzia a52dec.
 %package libs
 Summary:	a52dec library for handling encrypted DVDs
 Summary(pl.UTF-8):	Biblioteka a52dec - do obsługi zakodowanych DVD
-Group:		Development/Libraries
+Group:		Libraries
 
 %description libs
 liba52 is a free library for decoding ATSC A/52 streams. It is
