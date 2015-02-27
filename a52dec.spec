@@ -1,5 +1,5 @@
 %define		subver	20040611
-%define		rel		4
+%define		rel		5
 Summary:	A library for handling encrypted DVDs
 Summary(pl.UTF-8):	Biblioteka do obsługi zakodowanych DVD
 Name:		a52dec
