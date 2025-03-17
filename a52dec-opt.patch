@@ -1,5 +1,5 @@
---- a52dec-0.7.5-cvs/configure.in.orig	2004-01-02 00:52:27.000000000 +0100
-+++ a52dec-0.7.5-cvs/configure.in	2006-01-29 17:21:01.000000000 +0100
+--- a52dec-v0.8.0/configure.ac.orig	2004-01-02 00:52:27.000000000 +0100
++++ a52dec-v0.8.0/configure.ac	2006-01-29 17:21:01.000000000 +0100
 @@ -30,13 +30,6 @@
      TRY_CFLAGS="$OPT_CFLAGS -Wall"
      AC_TRY_CFLAGS([$TRY_CFLAGS $CFLAGS],[OPT_CFLAGS="$TRY_CFLAGS"])

@@ -1,18 +1,18 @@
-%define		subver	20040611
-%define		rel		5
+# TODO: system libao in a52dec executable?
 Summary:	A library for handling encrypted DVDs
 Summary(pl.UTF-8):	Biblioteka do obsługi zakodowanych DVD
 Name:		a52dec
-Version:	0.7.5
-Release:	0.%{subver}.%{rel}
+Version:	0.8.0
+Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
-Source0:	http://liba52.sourceforge.net/files/%{name}-snapshot.tar.gz
-# Source0-md5:	1729c7507f76b0d4cc04540926c5d0d7
+#Source0Download: https://git.adelielinux.org/community/a52dec/-/tags
+Source0:	https://git.adelielinux.org/community/a52dec/-/archive/v%{version}/%{name}-v%{version}.tar.bz2
+# Source0-md5:	f3945d6a688471a9220fdaff57ee2e05
 Patch0:		%{name}-opt.patch
 Patch1:		%{name}-pic.patch
-URL:		http://liba52.sourceforge.net/
-BuildRequires:	autoconf
+URL:		https://liba52.sourceforge.net/
+BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
 BuildRequires:	libtool
 Requires:	%{name}-libs = %{version}-%{release}
@@ -76,7 +76,7 @@ Static a52dec library.
 Statyczna biblioteka a52dec.
 
 %prep
-%setup -q -n %{name}-%{version}-cvs
+%setup -q -n %{name}-v%{version}
 %patch -P0 -p1
 %patch -P1 -p1
 
@@ -84,6 +84,7 @@ Statyczna biblioteka a52dec.
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure \
 	--enable-shared
@@ -95,6 +96,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/liba52.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -103,7 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS NEWS README TODO
+%doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/a52dec
 %attr(755,root,root) %{_bindir}/extract_a52
 %{_mandir}/man1/a52dec.1*
@@ -117,7 +121,6 @@ rm -rf $RPM_BUILD_ROOT
 %files libs-devel
 %defattr(644,root,root,755)
 %{_libdir}/liba52.so
-%{_libdir}/liba52.la
 %{_includedir}/a52dec
 %{_pkgconfigdir}/liba52.pc
 
